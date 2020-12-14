@@ -11,6 +11,7 @@ APP_NS=$2
 #Get all deployment in APP_NS namespace
 LIST=`oc get deployment --template '{{range .items}}{{.metadata.name}} {{end}}' -n ${APP_NS}`
 
-for i in $LIST ; do
-    echo $i
+for d in $LIST ; do
+    #echo $d
+    oc annotate deployment $d sidecar.istio.io/inject=true
 done
