@@ -17,7 +17,7 @@ function annotateForInjection() {
   echo -en "\n\nInjecting istio sidecar annotation into Deployment: $DEPLOY\n"
 
   # 1)  Add istio inject annotion into pod.spec.template
-  echo "apiVersion: apps.openshift.io/v1
+  echo "apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: $DEPLOY
