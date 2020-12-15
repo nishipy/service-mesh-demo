@@ -13,5 +13,5 @@ LIST=`oc get deployment --template '{{range .items}}{{.metadata.name}} {{end}}' 
 
 for DEPLOY in $LIST ; do
     #echo $DEPLOY
-    oc patch deployment $DEPLOY -p '{"spec":{"template":{"metadata":{"annotations":{"sidecar.istio.io/inject":"true", "sidecar.istio.io/rewriteAppHTTPProbers": "true"}}}}}'
+    oc patch deployment $DEPLOY -p '{"spec":{"template":{"metadata":{"annotations":{"sidecar.istio.io/inject":"true", "sidecar.istio.io/rewriteAppHTTPProbers": "true"}}}}}' -n ${APP_NS}
 done
