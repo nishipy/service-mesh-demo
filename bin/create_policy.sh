@@ -17,7 +17,7 @@ function createPolicy() {
 apiVersion: authentication.istio.io/v1alpha1
 kind: Policy
 metadata:
-  name: process-service-mtls
+  name: ${SVC}-service-mtls
 spec:
   peers:
   - mtls:
