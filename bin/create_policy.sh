@@ -28,3 +28,7 @@ spec:
 
 oc apply -f $HOME/${SVC}-policy.yml -n ${APP_NS}
 }
+
+for SVC in $SERVICES ; do
+    createPolicy
+done
